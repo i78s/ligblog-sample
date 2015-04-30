@@ -20,4 +20,10 @@ angular.module('controller',[])
         }
         $scope.account = MemberModel.get($routeParams.id).$object;
     }
+])
+.controller('NotFoundCtrl', [
+    '$scope',
+    function($scope){
+
+    }
 ]);

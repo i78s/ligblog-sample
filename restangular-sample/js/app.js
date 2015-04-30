@@ -10,7 +10,7 @@
         '$routeProvider',
         function($routeProvider){
             $routeProvider.
-                otherwise('/member')
+                otherwise('/notFound')
                 .when('/member', {
                     templateUrl: 'views/index.html',
                     controller: 'member.IndexCtrl'
@@ -18,6 +18,10 @@
                 .when('/member/:id', {
                     templateUrl: 'views/detail.html',
                     controller: 'member.DetailCtrl'
+                })
+                .when('/notFound', {
+                    templateUrl: 'views/notFound.html',
+                    controller: 'NotFoundCtrl'
                 })
         }
     ]);

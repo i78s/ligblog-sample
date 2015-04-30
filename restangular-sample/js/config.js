@@ -24,3 +24,22 @@ angular.module('config').config([
         });
     }
 ]);
+angular.module('config').run([
+    '$location',
+    'Restangular',
+    function($location,Restangular){
+        Restangular.setErrorInterceptor(
+            function (response, deferred, responseHandler) {
+                if (response.status == 404) {
+                    console.log("Resource not available...");
+                    $location.path('/notFound');
+                } else {
+                    console.log("Response received with HTTP error code: " + response.status );
+                }
+                console.log(response, deferred, responseHandler);
+
+                //return false; // stop the promise chain
+            }
+        );
+    }
+]);

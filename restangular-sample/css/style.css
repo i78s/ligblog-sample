@@ -29,3 +29,7 @@ a:hover{
     font-weight: bold;
     margin-bottom: 14px;
 }
+
+.notfound{
+    padding: 40px 0 60px;
+}
