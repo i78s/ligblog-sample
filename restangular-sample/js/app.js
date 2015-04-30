@@ -1,10 +1,11 @@
 (function(angular){
     angular.module('app',[
         'ngRoute',
-        'ngResource',
+        'restangular',
         'constants',
         'services',
-        'controller'
+        'controller',
+        'config'
     ]).config([
         '$routeProvider',
         function($routeProvider){

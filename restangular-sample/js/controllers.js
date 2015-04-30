@@ -3,7 +3,10 @@ angular.module('controller',[])
     '$scope',
     'MemberModel',
     function($scope,MemberModel){
-        $scope.accounts = MemberModel.query();
+        // Promiseオブジェクトが返ってくる
+        $scope.accounts = MemberModel.getList().then(function(res){
+            $scope.accounts = res;
+        });
     }
 ])
 .controller('member.DetailCtrl', [
@@ -15,6 +18,6 @@ angular.module('controller',[])
         if(!$routeParams){
             $location.path('/member');
         }
-        $scope.account = MemberModel.get({id: $routeParams.id});
+        $scope.account = MemberModel.get($routeParams.id).$object;
     }
 ]);
