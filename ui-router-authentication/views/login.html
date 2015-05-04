@@ -1,0 +1,17 @@
+<form ng-submit="login()" name="loginForm" class="login">
+
+    <div class="l-block">
+        <label>Eメール</label>
+        <input type="text" name="text" class="form-control" placeholder="Enter E-Mail" ng-model="user.email"
+               required>
+    </div>
+    <div class="l-block">
+        <label>パスワード</label>
+        <input type="password" name="password" class="form-control" placeholder="Enter Password"
+               ng-model="user.password" required>
+    </div>
+
+    <div class="l-block">
+        <button type="submit" ng-disabled="loginForm.$invalid" class="btn btn-primary btn-block btn-raised">ログイン</button>
+    </div>
+</form>
